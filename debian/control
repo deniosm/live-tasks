@@ -1,0 +1,205 @@
+Source: live-tasks
+Maintainer: Denis Maslo <denios-linux@proton.me>,
+            Live Systems Maintainers <debian-live@lists.debian.org>
+Uploaders: Denis Maslo <denios-linux@proton.me>,
+           Jonathan Carter <jcc@debian.org>
+Section: metapackages
+Priority: optional
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+
+Package: live-task-base
+Architecture: all
+Depends: libnss-myhostname, live-boot, live-config, task-bosnian, ${misc:Depends}
+Recommends: live-task-recommended
+Suggests: live-task-extra
+Description: Live base environment support
+ This metapackage installs base packages and documentation to help support
+ Debian live environments.
+
+Package: live-task-recommended
+Architecture: all
+Depends: task-english, task-bosnian, task-laptop, ${misc:Depends}
+Recommends: cups,
+            dbus,
+            dkms,
+            file,
+            firmware-ath9k-htc,
+            firmware-linux-free,
+            hw-probe,
+            less,
+            lsof,
+            lvm2,
+            xfsprogs,
+            mdadm,
+            psmisc,
+            netutils,
+            openssh-client,
+            time
+Description: Live recommended environment support
+ This metapackage installs recommended packages and documentation to help
+ support Debian live environments.
+
+Package: live-task-extra
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: bash-auto-completion,
+            dnsutils,
+            hdparm,
+            htop,
+            inetutils-ftp,
+            man-db,
+            screen,
+            telnet,
+            vim,
+            w3m,
+            whois
+Description: Live extra environment support
+ This metapackage installs extra packages and documentation to help support
+ Debian live environments.
+
+Package: live-task-localisation
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: ibus-m17n,
+            task-bosnian,
+            task-croatian,
+            task-english,
+            task-macedonian,
+            task-serbian,
+            task-slovenian
+Description: Live environment localisation support
+ This metapackage installs packages and documentation to help support Debian
+ live environments for other languages.
+
+Package: live-task-localisation-desktop
+Architecture: all
+Depends: live-task-localisation, ${misc:Depends}
+Recommends: task-bosnian-desktop,
+            task-croatian-desktop,
+            task-serbian-desktop,
+            task-slovenian-desktop,
+Description: Live graphical desktop environment localisation support
+ This metapackage installs packages and documentation to help support Debian
+ live graphical desktop environments for other languages.
+
+Package: live-task-kde
+Architecture: all
+Depends: live-task-base, task-kde-desktop, ${misc:Depends}
+Recommends: calamares-settings-denios,
+            live-task-localisation,
+            live-task-localisation-desktop,
+            task-bosnian-kde-desktop,
+            task-croatian-kde-desktop,
+            task-serbian-kde-desktop,
+            task-slovenian-kde-desktop,
+Description: Live environment support for KDE
+ This metapackage installs packages and documentation to support the Debian
+ live KDE environment.
+
+Package: live-task-gnome
+Architecture: all
+Depends: live-task-base, task-gnome-desktop, ${misc:Depends}
+Recommends: calamares-settings-denios,
+            live-task-localisation,
+            live-task-localisation-desktop,
+            plymouth,
+Description: Live environment support for GNOME
+ This metapackage installs packages and documentation to support the Debian
+ live GNOME environment.
+
+Package: live-task-lxde
+Architecture: all
+Depends: live-task-base, task-lxde-desktop, ${misc:Depends}
+Recommends: calamares-settings-denios,
+            live-task-localisation,
+            live-task-localisation-desktop,
+            plymouth
+Description: Live environment support for Lxde
+ This metapackage installs packages and documentation to support the Debian
+ live Lxde environment.
+
+Package: live-task-xfce
+Architecture: all
+Depends: live-task-base, task-xfce-desktop, ${misc:Depends}
+Recommends: calamares-settings-denios,
+            live-task-localisation,
+            live-task-localisation-desktop,
+            plymouth
+Description: Live environment support for Xfce
+ This metapackage installs packages and documentation to support the Debian
+ live Xfce environment.
+
+Package: live-task-lxqt
+Architecture: all
+Depends: live-task-base, task-lxqt-desktop, ${misc:Depends}
+Recommends: calamares-settings-denios,
+            live-task-localisation,
+            live-task-localisation-desktop,
+            plymouth
+Description: Live environment support for LXQt
+ This metapackage installs packages and documentation to support the Debian
+ live LXQt environment.
+
+Package: live-task-cinnamon
+Architecture: all
+Depends: live-task-base, task-cinnamon-desktop, ${misc:Depends}
+Recommends: calamares-settings-denios,
+            live-task-localisation,
+            live-task-localisation-desktop,
+	    gnome-terminal,
+            plymouth
+Description: Live environment support for Cinnamon
+ This metapackage installs packages and documentation to support the Debian
+ live Cinnamon environment.
+
+Package: live-task-mate
+Architecture: all
+Depends: live-task-base, task-mate-desktop, live-task-bosnian, ${misc:Depends}
+Recommends: calamares-settings-denios,
+            live-task-localisation,
+            live-task-localisation-desktop,
+            plymouth
+Description: Live environment support for Mate
+ This metapackage installs packages and documentation to support the Debian
+ live Mate environment.
+
+Package: live-task-standard
+Architecture: all
+Depends: apt-listchanges,
+         bash-completion,
+         bind9-host,
+         bzip2,
+         dbus,
+         debian-faq,
+         default-logind | logind,
+         file,
+         gettext-base,
+         groff-base,
+         krb5-locales,
+         libc-l10n,
+         liblockfile-bin,
+         libnss-systemd,
+         live-task-base,
+         locales,
+         lsof,
+         man-db,
+         manpages,
+         media-types,
+         ncurses-term,
+         netcat-openbsd,
+         openssh-client,
+         pciutils,
+         perl,
+         python3,
+         traceroute,
+         ucf,
+         usbutils,
+         wget,
+         xz-utils,
+         ${misc:Depends}
+Recommends: live-task-localisation
+Description: Live environment for standard system utilities
+ This metapackage sets up a basic user environment, providing a reasonably
+ small selection of services and tools usable on the command line.
